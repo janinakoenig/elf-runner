@@ -23,7 +23,7 @@ export default function ElfGame() {
   const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'gameover'
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(() => {
-    return parseInt(localStorage.getItem('dinoHighScore') || '0', 10);
+    return parseInt(localStorage.getItem('elfHighScore') || '0', 10);
   });
 
   // Game state refs (to avoid stale closures in game loop)
@@ -137,7 +137,7 @@ export default function ElfGame() {
           setGameState('gameover');
           if (scoreRef.current > highScore) {
             setHighScore(scoreRef.current);
-            localStorage.setItem('dinoHighScore', scoreRef.current.toString());
+            localStorage.setItem('elfHighScore', scoreRef.current.toString());
           }
           return;
         }
@@ -187,7 +187,7 @@ export default function ElfGame() {
     if (gameState === 'idle') {
       return (
         <div style={overlayStyle}>
-          <div style={{ fontSize: '24px', marginBottom: '10px' }}>🦖</div>
+          <div style={{ fontSize: '24px', marginBottom: '10px' }}>🧝🏻‍♂️</div>
           <div>Press SPACE or tap to start</div>
         </div>
       );
