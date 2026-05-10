@@ -1,6 +1,7 @@
 # 🧝 Elf Runner
 
 A simple **jump-and-run browser game** inspired by the classic offline dinosaur game in Google Chrome.
+I also added a Dockerfile, so it can run on any machine.
 
 ## 🎮 About the Game
 
@@ -25,8 +26,45 @@ Built as a fun project to practice game logic, rendering, and basic animation us
 * JavaScript (React)
 * HTML5 Canvas
 * CSS
+* Docker
+
+## Requirement
+* 
 
 ## 📦 Installation & Setup
+
+🐳 Run with Docker
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/janinakoenig/elf-runner.git
+```
+
+2. Navigate into the project folder:
+
+```bash
+cd elf-runner
+```
+
+3. Build the Docker image:
+
+```bash
+docker build -t elf-runner .
+```
+
+4. Run the container:
+
+```bash
+coker run -p 3000:3000 elf-runner
+```
+
+5. Open your browser at http://localhost:3000 and start playing!
+
+
+
+
+💻 Run locally (without Docker)
 
 1. Clone the repository:
 
@@ -55,12 +93,17 @@ npm run dev
 ## 📁 Project Structure
 
 ```bash
-src/
- ├── components/
- │    └── ElfGame.jsx   # Main game logic and rendering
- ├── assets/            # Images and sprites
- ├── App.js
- └── index.js
+elf-runner/
+ ├── public/            # Static assets
+ ├── src/
+ │    ├── components/
+ │    │    └── ElfGame.jsx   # Main game logic and rendering
+ │    ├── assets/            # Images and sprites
+ │    ├── App.jsx
+ │    └── index.jsx
+ ├── Dockerfile             # Container setup
+ ├── index.html
+ └── package.json 
 ```
 
 ✨ Inspired by the Chrome offline dinosaur game.
